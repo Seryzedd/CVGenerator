@@ -5,4 +5,4 @@ from django.shortcuts import render
 
 def homepage_view(request):
     #return HttpResponse("Bienvenue page accueil !")
-    return render(request, 'home/index.html')
+    return render(request, 'index.html')
