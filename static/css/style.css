@@ -1,3 +1,4 @@
+/** variable couleurs */
 :root {
     --primary: #d58efb;
     --primary-hover: #f685ff;
@@ -8,6 +9,8 @@
     --danger: #f77292;
     --info: #51ecf9;
 }
+
+/** ------------------- Surcharge bootstrap ----------------- **/
 
 .btn.btn-primary {
     background-color: var(--primary);
@@ -34,6 +37,10 @@
     background-color: var(--primary) !important;
 }
 
+.text-primary {
+    color: var(--primary) !important;
+}
+
 .btn.btn-secondary {
     background-color: var(--secondary);
     border: 1px solid var(--secondary);
@@ -57,6 +64,10 @@
 
 .bg-secondary {
     background-color: var(--secondary) !important;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
 }
 
 .btn.btn-success {
@@ -107,4 +118,23 @@
 
 .bg-danger {
     background-color: var(--danger) !important;
+}
+
+/* ------------- decoupe template ---------------*/
+
+body {
+    min-height: 95vh;
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "main main";
+    grid-template-columns: fit-content 3fr;
+}
+
+main {
+    grid-area: main;
+}
+
+body header {
+    grid-area: header;
 }

@@ -5,4 +5,29 @@
 {% block header %}{% endblock %}
 
 {% block body %}
+    <div class="w-100 px-3">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 py-5 px-5">
+                <h1 class="text-center text-secondary mt-3">CV Generator</h1>
+                <form method="post" class="form-group text-center">
+                    <h3 class="">Formulaire de connexion</h3>
+                    <p class="text-muted">Pour utiliser Le générateur, merci de vous connecter avec vos identifiants.</p>
+                    {% csrf_token %}
+                    <div class="pt-4">
+                        {{ form.email.label_tag  }}
+                        {{ form.email }}
+                        {{ form.email.errors }}
+                    </div>
+                    <div class="pt-4">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                        {{ form.password.errors }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Se connecter</button>
+                </form>
+                <p class="text-muted text-center mt-2">Je n'ai pas de compte <a href="">Créer un compte</a>.</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
