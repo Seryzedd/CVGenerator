@@ -120,6 +120,10 @@
     background-color: var(--danger) !important;
 }
 
+.nav-link:hover {
+    background-color: #d5d5d5;
+}
+
 /* ------------- decoupe template ---------------*/
 
 body {
