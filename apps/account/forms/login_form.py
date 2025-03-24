@@ -1,6 +1,7 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 
-class LoginForm(forms.Form):
+class LoginForm(AuthenticationForm):
     email = forms.CharField(
         label="Email",
         max_length=100,
