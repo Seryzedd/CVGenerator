@@ -124,6 +124,13 @@
     background-color: #d5d5d5;
 }
 
+.alert {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
 /* ------------- decoupe template ---------------*/
 
 body {
