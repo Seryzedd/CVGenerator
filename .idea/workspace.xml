@@ -1,35 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="474d7d60-928c-47f0-9182-8d956e6254cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+    <list default="true" id="474d7d60-928c-47f0-9182-8d956e6254cc" name="Changes" comment="Add Django settings">
+      <change afterPath="$PROJECT_DIR$/apps/account/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/account/models/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CVGenerator/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CVGenerator/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CVGenerator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CVGenerator/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/homepage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/homepage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/forms/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/forms/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/forms/login_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/forms/login_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/templates/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/templates/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Seryzedd&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Seryzedd/CVGenerator.git&quot;,
+    &quot;accountId&quot;: &quot;8cd49832-9f3a-44f5-aa1a-db79b3619584&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2uknspfvw1jMqA5M9HDCFcUUOou" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "9b4699c3"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;e7d5e817&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -46,6 +85,30 @@
       <option name="presentableId" value="Default" />
       <updated>1742801649616</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add Django settings">
+      <option name="closed" value="true" />
+      <created>1742802630092</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742802630107</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Django settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Django settings" />
   </component>
 </project>

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.homepage',
-    'apps.login'
+    'apps.account'
 ]
 
 MIDDLEWARE = [
@@ -77,11 +78,16 @@ WSGI_APPLICATION = 'CVGenerator.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_db',
+        'USER': 'django_user',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
+DEFAULT_CHARSET = "utf-8"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -131,3 +137,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS =[
     '127.0.0.1'
 ]
+
+AUTH_USER_MODEL = 'account.User'
+
+MESSAGE_TAGS = {
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.DEBUG: "secondary",
+    messages.ERROR: 'danger'
+}
+
+# Redirection après connexion réussie
+LOGIN_REDIRECT_URL = 'home'
+# URL apres deconnxion connexion
+LOGOUT_REDIRECT_URL = 'login'
+# LOGIN_URL = page de connexion
+LOGIN_URL = 'login'
