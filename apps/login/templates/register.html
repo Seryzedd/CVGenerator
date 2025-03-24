@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+    <div class="w-100 px-3">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 py-5 px-5">
+                <h1 class="text-center text-secondary mt-3">CV Generator</h1>
+                <form method="post" class="form-group text-center">
+                    <h3 class="">Formulaire de connexion</h3>
+                    <p class="text-muted">Pour utiliser Le générateur, merci de vous connecter avec vos identifiants.</p>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {{ form.username.label_tag  }}
+                        {{ form.username }}
+                        {% if not form.username.errors %}
+                            <p class="text-muted">contains only letters</p>
+                        {% endif %}
+                        {{ form.username.errors }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.email.label_tag  }}
+                        {{ form.email }}
+                        {% if not form.email.errors %}
+                            <p class="text-muted">Email avec "@"</p>
+                        {% endif %}
+                        {{ form.email.errors }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.firstname.label_tag  }}
+                        {{ form.firstname }}
+                        {% if not form.firstname.errors %}
+                            <p class="text-muted">contains only letters</p>
+                        {% endif %}
+                        {{ form.firstname.errors }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.lastname.label_tag  }}
+                        {{ form.lastname }}
+                        {% if not form.lastname.errors %}
+                            <p class="text-muted">contains only letters</p>
+                        {% endif %}
+                        {{ form.lastname.errors }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.password.label_tag  }}
+                        {{ form.password }}
+                        {{ form.password.errors }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.confirm_password.label_tag  }}
+                        {{ form.confirm_password }}
+                        {% if not form.password.errors %}
+                            <p class="text-muted mb-0">mot de passe contient 8 caractères</p>
+                            <p class="text-muted mb-0">mot de passe contient 1 majuscule</p>
+                            <p class="text-muted mb-0">mot de passe contient 1 minuscule</p>
+                            <p class="text-muted mb-0">mot de passe contient 1 caracteres spéciale (!@#$%^*&():?)</p>
+                        {% endif %}
+                        {{ form.confirm_password.errors }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Créer un compte</button>
+                </form>
+                <p class="text-muted text-center mt-2">J'ai déja un compte <a href="">Se connecter</a>.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

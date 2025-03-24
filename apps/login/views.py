@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from apps.login.forms.login_form import LoginForm
 from apps.login.models import User
 from django.contrib import messages
+from apps.login.forms.register_form import RegisterForm
 
 # Create your views here.
 class customLoginView(LoginView):
@@ -39,3 +40,32 @@ class customLoginView(LoginView):
         if request.user.is_authenticated:
             return redirect('home')
         return super().dispatch(request, *args, **kwargs)
+
+def registerAccount(request) :
+    form = RegisterForm(request.POST or None)
+
+    if form.is_valid():
+        # Traitement si le formulaire est valide
+        cleaned_data = form.cleaned_data
+        try:
+
+            User.objects.create_user(
+                username=cleaned_data['username'],
+                email=cleaned_data['email'],
+                firstname=cleaned_data['firstname'],
+                lastname=cleaned_data['lastname'],
+                password=cleaned_data['password']
+            )
+
+            messages.success(request, "Inscription réussie !")
+
+            return redirect('home')
+        except IntegrityError:
+            messages.error(request, 'Email déjà utilisé.')
+        except Exception as e:
+            print(e)
+            messages.error(request, f"Une erreur est survenue : {e}")
+
+    return render(request, 'register.html', {
+        'form': form
+    })
