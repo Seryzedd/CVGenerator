@@ -1,5 +1,4 @@
 from dataclasses import replace
-
 from django import forms
 import os
 from apps.login.utils.validator import validate_alpha
@@ -60,3 +59,6 @@ class CvForm(forms.Form):
         label='Couleur secondaire',
         widget=forms.TextInput(attrs={'type': 'color', 'class': 'form-control form-control-color'})
     )
+
+    def clean(self):
+        return super().clean()
