@@ -59,7 +59,7 @@ def registerAccount(request) :
 
             messages.success(request, "Inscription réussie !")
 
-            return redirect('home')
+            return redirect('login')
         except IntegrityError:
             messages.error(request, 'Email déjà utilisé.')
         except Exception as e:
