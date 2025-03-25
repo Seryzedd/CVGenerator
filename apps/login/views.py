@@ -8,7 +8,7 @@ from django.contrib import messages
 from apps.login.forms.register_form import RegisterForm
 
 # Create your views here.
-class customLoginView(LoginView):
+class CustomLoginView(LoginView):
     template_name = 'index.html'
     authentication_form = LoginForm
     redirect_authenticated_user = True
@@ -32,6 +32,7 @@ class customLoginView(LoginView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
+
         """ Connexion echoué et message d'alerte"""
         messages.error(self.request, "Identifiants invalides. Connexion échouée !")
         return super().form_invalid(form)

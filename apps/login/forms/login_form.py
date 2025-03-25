@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 
 class LoginForm(AuthenticationForm):
-    email = forms.CharField(
+    username = forms.CharField(
         label="Email",
         max_length=100,
         required=True,
@@ -18,6 +18,7 @@ class LoginForm(AuthenticationForm):
         label="Password",
         max_length=100,
         required=True,
+        validators=[],
         widget=forms.PasswordInput(
             attrs={
                 'class': 'form-control text-center',

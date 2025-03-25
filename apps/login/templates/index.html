@@ -14,9 +14,9 @@
                     <p class="text-muted">Pour utiliser Le générateur, merci de vous connecter avec vos identifiants.</p>
                     {% csrf_token %}
                     <div class="pt-4">
-                        {{ form.email.label_tag  }}
-                        {{ form.email }}
-                        {{ form.email.errors }}
+                        {{ form.username.label_tag  }}
+                        {{ form.username }}
+                        {{ form.username.errors }}
                     </div>
                     <div class="pt-4">
                         {{ form.password.label_tag }}

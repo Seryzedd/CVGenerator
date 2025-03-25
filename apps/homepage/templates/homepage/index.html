@@ -3,5 +3,38 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+    <div class="container">
+        {% if cvs %}
+            <h2 class="text-primary">Mes CV configurés</h2>
+            {% for cv in cvs %}
+                <div class="bg-light rounded row align-items-center">
+                    <div class="col-md-4">
+                        <p class="text-muted p-2 mb-0">
+                            <i class="fas fa-file-pdf fa-lg"></i>
+                        </p>
+                    </div>
 
+                    <div class="col-md-4 p-2">
+                        <h3 class="text-secondary mb-0">{{cv.name}}</h3>
+                    </div>
+
+                    <div class="col-md-4 d-flex justify-content-end p-2">
+                        <button class="btn btn-outline-dark mx-2" title="Générer le fichier">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn btn-primary mx-2" title="modifier la configuration">
+                            <i class="fas fa-pen"></i>
+                        </button>
+
+                        <button class="btn btn-light mx-2" title="modifier la configuration">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h2 class="text-muted text-center">Pas de CV configuré actuellement</h2>
+            <p class="text-dark">Pour configurer un CV <a href="{% url 'cvNew' %}">Créer un CV</a></p>
+        {% endif %}
+    </div>
 {% endblock %}
