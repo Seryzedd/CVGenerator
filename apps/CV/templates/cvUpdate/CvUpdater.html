@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}CV Manager{% endblock %}
+
+{% block body %}
+<div class="px-3">
+    <div class="text-center bg-light p-4">
+        <h1 class="col-12 text-secondary">Modifier le CV "{{ cv.name }}"</h1>
+        <form method="post" class="">
+            <div class="row">
+                <div class="col-md-6">
+                    {% csrf_token %}
+                    <div class="mb-3 text-center">
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+                        {{ form.name.errors }}
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        {{ form.template.label_tag }}
+                        {{ form.template }}
+                        {{ form.template.errors }}
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        {{ form.description.label_tag }}
+                        {{ form.description }}
+                        {{ form.description.errors }}
+                    </div>
+
+                    <div class="mb-3 text-center d-flex align-items-center justify-content-center">
+                        {{ form.primaryColor.label_tag }}
+                        {{ form.primaryColor }}
+                        {{ form.primaryColor.errors }}
+                    </div>
+
+                    <div class="mb-3 text-center d-flex align-items-center justify-content-center">
+                        {{ form.secondaryColor.label_tag }}
+                        {{ form.secondaryColor }}
+                        {{ form.secondaryColor.errors }}
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div id="blocks">
+                        {% for block in cvblocks %}
+                            <h3 class="text-secondary">
+                                Block "{{ block.name }}"
+                            </h3>
+                            <div class="block-container">
+                                <input type="hidden" name="block-id-{{ block.id }}" value="{{ block.id }}">
+                                <label for="block-name-{{ block.id }}">Name</label>
+
+                                <input class="form-control" name="block-name-{{ block.id }}" id="block-name-{{ block.id }}" value="{{ block.name }}">
+
+                                <label for="placement-{{ block.id }}">Placement</label>
+
+                                <select id="placement-{{ block.id }}" class="form-control" name="block-placement-{{ block.id }}">
+                                    <option value="left-side" {% if block.placement == "left-side" %}selected{% endif %}>left</option>
+                                    <option value="right-side" {% if block.placement == "right-side" %}selected{% endif %}>right</option>
+                                </select>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+
+                    <button class="btn btn-dark mt-2" type="button" id="newBlock">
+                        Ajouter un block
+                    </button>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Valider la modification</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

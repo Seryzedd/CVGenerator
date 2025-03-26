@@ -5,7 +5,11 @@
 {% block body %}
     <div class="container">
         {% if cvs %}
-            <h2 class="text-primary">Mes CV configurés</h2>
+            <div class="d-flex align-items-baseline justify-content-between mb-2">
+                <h2 class="text-primary">Mes CV configurés</h2>
+                <a href="{% url 'cvNew' %}" class="btn btn-dark"><i class="fas fa-plus"></i></a>
+            </div>
+
             {% for cv in cvs %}
                 <div class="bg-light rounded row align-items-center">
                     <div class="col-md-4">
@@ -15,16 +19,17 @@
                     </div>
 
                     <div class="col-md-4 p-2">
-                        <h3 class="text-secondary mb-0">{{cv.name}}</h3>
+                        <h3 class="text-secondary mb-0">{{ cv.name }}</h3>
                     </div>
 
                     <div class="col-md-4 d-flex justify-content-end p-2">
                         <button class="btn btn-outline-dark mx-2" title="Générer le fichier">
                             <i class="fas fa-download"></i>
                         </button>
-                        <button class="btn btn-primary mx-2" title="modifier la configuration">
+
+                        <a class="btn btn-primary mx-2" href="{% url 'cvUpdate' name=cv.name %}" title="modifier la configuration">
                             <i class="fas fa-pen"></i>
-                        </button>
+                        </a>
 
                         <button class="btn btn-light mx-2" title="modifier la configuration">
                             <i class="fas fa-trash-alt"></i>

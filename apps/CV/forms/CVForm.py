@@ -1,7 +1,9 @@
 from dataclasses import replace
 from django import forms
+from django.forms import ModelForm
 import os
 from apps.login.utils.validator import validate_alpha
+from apps.CV.models.CV import CV
 
 
 def getTemplates():
@@ -59,6 +61,18 @@ class CvForm(forms.Form):
         label='Couleur secondaire',
         widget=forms.TextInput(attrs={'type': 'color', 'class': 'form-control form-control-color'})
     )
+
+    class Meta:
+        model = CV
+        fields = ["name", "description", "template", "primaryColor", "secondaryColor"]
+
+    def setData(self, data):
+        self.initial['name']=data.name
+        self.initial['description'] = data.description
+        self.initial['template'] = data.template
+        self.initial['primaryColor'] = data.primaryColor
+        self.initial['secondaryColor'] = data.secondaryColor
+
 
     def clean(self):
         return super().clean()
