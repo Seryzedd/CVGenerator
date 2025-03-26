@@ -17,6 +17,18 @@
     {% include 'partials/header.html' %}
   {% endblock %}
 
+  <nav>
+    <!-- Vérifie si l'utilisateur est authentifié et s'il n'est pas sur les pages login/signup -->
+    {% if user.is_authenticated %}
+        {% if request.path != '/account/login/' and request.path != '/account/signup/' %}
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Déconnexion</button>
+            </form>
+        {% endif %}
+    {% endif %}
+  </nav>
+
   <main>
       {% block alertMessages %}
         {% if messages %}
@@ -29,11 +41,9 @@
                 {% endfor %}
             </div>
         {% endif %}
-
       {% endblock %}
       {% block body %}{% endblock %}
   </main>
-
 
   {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

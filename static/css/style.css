@@ -149,3 +149,35 @@ main {
 body header {
     grid-area: header;
 }
+
+/* -------------------- Toolbar -------------------- */
+
+.toolbar {
+  background-color: #333;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.toolbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.toolbar li {
+  margin-right: 20px;
+}
+
+.toolbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toolbar a:hover {
+  color: #ddd;
+}

@@ -147,3 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS =[
     '127.0.0.1'
 ]
+
+# Ajout des paramètres LOGIN_URL et LOGOUT_REDIRECT_URL
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'login'

@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views # ajout pour auth_views
 
 urlpatterns = [
     path('', include('apps.homepage.urls')),
     path('account/', include('apps.login.urls')),
-    path('CV/', include('apps.CV.urls'))
+    path('CV/', include('apps.CV.urls')),
+    path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),  # Ajout de la déconnexion
 ]
