@@ -59,6 +59,10 @@
                                     <option value="left-side" {% if block.placement == "left-side" %}selected{% endif %}>left</option>
                                     <option value="right-side" {% if block.placement == "right-side" %}selected{% endif %}>right</option>
                                 </select>
+
+                                <div id="linesContainer-{{ block.id }}" class="border px-3 py-2 mt-2">
+                                    <button class="btn btn-outline-dark mt-2" id="line-block-3" type="button">Créer une nouvelle ligne</button>
+                                </div>
                             </div>
 
                         {% endfor %}

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Update CV updating">
-      <change beforePath="$PROJECT_DIR$/apps/CV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/views.py" afterDir="false" />
+    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="uncomment exception">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/templates/cvUpdate/CvUpdater.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/cvUpdate/CvUpdater.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743004836524</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="uncomment exception">
+      <option name="closed" value="true" />
+      <created>1743005401128</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1743005401128</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +252,7 @@
     <MESSAGE value="Add tool_bar configuration" />
     <MESSAGE value="Add async adding blocks" />
     <MESSAGE value="Update CV updating" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update CV updating" />
+    <MESSAGE value="uncomment exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="uncomment exception" />
   </component>
 </project>

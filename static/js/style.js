@@ -23,7 +23,8 @@ $('#newBlock').on('click', function() {
 
 function createLineDivContainer(id, parentContainer, blockCounter) {
     const container = document.createElement("div");
-    container.setAttribute('id', id)
+    container.setAttribute('id', id);
+    container.setAttribute('class', 'border px-3 py-2 mt-2')
 
     createButton('Créer une nouvelle ligne', 'btn btn-outline-dark mt-2', 'line-block-' + blockCounter, container);
 
@@ -37,28 +38,39 @@ function createButton(text, className, id, parent) {
     button.setAttribute('type', 'button');
     button.textContent = text;
 
-    button.addEventListener("click", (e) => {
-      const linescontainer = $('.lineContainer');
-      if (!linescontainer) {
-        const linescontainer = document.createElement("div");
-        linescontainer.setAttribute('class', 'lineContainer');
-      }
-
-      var line = newLine();
-      linescontainer.appendChild(line);
-
-    });
+    addNewLineEventListener(button)
 
     parent.appendChild(button);
 }
+
+function addNewLineEventListener(button) {
+    console.log(button)
+    button.addEventListener("click", (e) => {
+      var line = newLine();
+      $(event.target).before(line)
+    });
+}
+
+$(document).ready(function() {
+    var button = document.querySelectorAll('.block-container [id^="linesContainer"] > button');
+
+    button.forEach((element) => addNewLineEventListener(element))
+})
+
 var i = 0;
 function newLine() {
 
     var lineBlock = document.createElement("div");
     lineBlock.setAttribute('class', 'lineContainer')
     i++
+    var lineTitle = document.createElement("h4");
+    lineTitle.setAttribute('class', 'text-secondary')
+    lineTitle.textContent='New Line'
+    lineBlock.appendChild(lineTitle)
 
-    createInputDate('Start At', 'line-' + i, lineBlock, 'StartDateLine-' + i);
+    createInput('form-control', 'line-' + i, 'title-line-' + i, lineBlock, 'Title')
+    createInputDate('StartAt-line-' + i, 'start-line-' + i, lineBlock, 'Start Date');
+    createInputDate('EndAt-line-' + i, 'end-line-' + i, lineBlock, 'End Date');
 
     return lineBlock
 
@@ -83,6 +95,7 @@ function createInputDate(name, id, parentContainer, labelName) {
     const label = document.createElement("label");
 
     label.setAttribute('for', id);
+    label.textContent  = labelName;
     input.setAttribute('type', 'date');
     input.setAttribute('class', 'form-control mt-2');
     input.setAttribute('id', id);
