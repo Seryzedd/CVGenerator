@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Add async adding blocks">
+      <change beforePath="$PROJECT_DIR$/apps/CV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Seryzedd/CVGenerator.git&quot;,
+    &quot;accountId&quot;: &quot;5b05d9cf-6303-44d5-9c06-7ef7374b4e95&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2uffizcsoheLqhtn2WmTyIXQAeU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;devAurel&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/CVGenerator/apps/login/utils&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\CVGenerator\apps\login\utils" />
+      <recent name="C:\wamp64\www\CVGenerator\apps\auth" />
+      <recent name="C:\wamp64\www\CVGenerator" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\CVGenerator\apps\CV\templates\CVNew" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-4f4e415b4190-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26053.29" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="" />
+      <created>1742644680240</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742644680240</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Create base project">
+      <option name="closed" value="true" />
+      <created>1742648736950</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742648736950</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add django files">
+      <option name="closed" value="true" />
+      <created>1742648911189</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742648911189</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix url bugs">
+      <option name="closed" value="true" />
+      <created>1742669194523</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742669194523</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix render templates">
+      <option name="closed" value="true" />
+      <created>1742670105485</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742670105485</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Change bootstrap default colors">
+      <option name="closed" value="true" />
+      <created>1742672444921</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742672444921</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add form login in template">
+      <option name="closed" value="true" />
+      <created>1742733200025</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742733200025</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add button form in header with fontawesome">
+      <option name="closed" value="true" />
+      <created>1742734149520</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742734149520</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Create User form Login + database user">
+      <option name="closed" value="true" />
+      <created>1742839289023</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742839289023</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Show messages">
+      <option name="closed" value="true" />
+      <created>1742842794611</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742842794611</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add register view + form">
+      <option name="closed" value="true" />
+      <created>1742849488206</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742849488206</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Create CV entity">
+      <option name="closed" value="true" />
+      <created>1742900455052</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742900455052</updated>
+    </task>
+    <task id="LOCAL-00012" summary="show Cv form view">
+      <option name="closed" value="true" />
+      <created>1742907398321</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742907398321</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fix login">
+      <option name="closed" value="true" />
+      <created>1742920669741</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742920669741</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add tool_bar configuration">
+      <option name="closed" value="true" />
+      <created>1742925771827</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1742925771827</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add tool_bar configuration">
+      <option name="closed" value="true" />
+      <created>1742925817465</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742925817465</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add async adding blocks">
+      <option name="closed" value="true" />
+      <created>1743001378979</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1743001378979</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create base project" />
+    <MESSAGE value="add django files" />
+    <MESSAGE value="Fix url bugs" />
+    <MESSAGE value="Fix render templates" />
+    <MESSAGE value="Change bootstrap default colors" />
+    <MESSAGE value="Add form login in template" />
+    <MESSAGE value="Add button form in header with fontawesome" />
+    <MESSAGE value="Create User form Login + database user" />
+    <MESSAGE value="Show messages" />
+    <MESSAGE value="Add register view + form" />
+    <MESSAGE value="Create CV entity" />
+    <MESSAGE value="show Cv form view" />
+    <MESSAGE value="Fix login" />
+    <MESSAGE value="Add tool_bar configuration" />
+    <MESSAGE value="Add async adding blocks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add async adding blocks" />
+  </component>
+</project>

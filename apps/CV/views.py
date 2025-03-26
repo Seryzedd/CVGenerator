@@ -44,7 +44,6 @@ def CVManageExistingCV(request, name):
     form.setData(cv)
 
     Cvblocks = Block.manager.getByCv(cv)
-    cvIds = [blockData.id for blockData in Cvblocks]
     post = request.POST
     if post:
         try:
@@ -81,9 +80,10 @@ def CVManageExistingCV(request, name):
 
         except IntegrityError:
             messages.error(request, 'Erreur lors de la mise a jour du CV.')
-        except Exception as e:
-            messages.error(request, f"Une erreur est survenue : {e}")
+        # except Exception as e:
+        #     messages.error(request, f"Une erreur est survenue : {e}")
 
     Cvblocks = Block.manager.getByCv(cv)
+    form.setData(cv)
 
     return render(request, 'CVUpdate/CvUpdater.html', {'form': form, 'cv': cv, 'cvblocks': Cvblocks})
