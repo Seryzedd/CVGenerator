@@ -80,8 +80,8 @@ def CVManageExistingCV(request, name):
 
         except IntegrityError:
             messages.error(request, 'Erreur lors de la mise a jour du CV.')
-        # except Exception as e:
-        #     messages.error(request, f"Une erreur est survenue : {e}")
+        except Exception as e:
+            messages.error(request, f"Une erreur est survenue : {e}")
 
     Cvblocks = Block.manager.getByCv(cv)
     form.setData(cv)
