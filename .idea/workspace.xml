@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Add new lines button for all blocks">
-      <change afterPath="$PROJECT_DIR$/apps/CV/templates/CvTemplaterender/view.html" afterDir="false" />
+    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Add template view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/forms/CVForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/forms/CVForm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/models/CV.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/models/CV.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_left.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_left.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_right.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_right.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/homepage/templates/homepage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/homepage/templates/homepage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743022599234</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add template view">
+      <option name="closed" value="true" />
+      <created>1743069703540</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1743069703540</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,6 +271,7 @@
     <MESSAGE value="Update CV updating" />
     <MESSAGE value="uncomment exception" />
     <MESSAGE value="Add new lines button for all blocks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new lines button for all blocks" />
+    <MESSAGE value="Add template view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add template view" />
   </component>
 </project>

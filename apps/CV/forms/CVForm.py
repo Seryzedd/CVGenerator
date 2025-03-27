@@ -64,7 +64,7 @@ class CvForm(forms.Form):
 
     class Meta:
         model = CV
-        fields = ["name", "description", "template", "primaryColor", "secondaryColor"]
+        fields = ["name", "description", "template", "primaryColor", "secondaryColor", 'id']
 
     def setData(self, data):
         self.initial['name']=data.name

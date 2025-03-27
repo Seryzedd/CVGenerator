@@ -12,8 +12,9 @@ class CVManager():
     def getById(self, id):
         return CV.objects.all().filter(id=id).select_related()[0]
 
+
+
 class CV(models.Model):
-    id = models.CharField(unique=True, primary_key=True, auto_created=True)
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
     description = models.TextField(max_length=255)
@@ -35,6 +36,7 @@ class CV(models.Model):
         self.template = data['template']
         self.primaryColor = data['primaryColor']
         self.secondaryColor = data['secondaryColor']
+        self.user= data['user']
 
         self.save()
 
@@ -42,7 +44,7 @@ class CV(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.name)
+            self.slug = slugify(self.id)
         
         super().save()
 
