@@ -30,13 +30,14 @@ class CV(models.Model):
         verbose_name_plural = "CVS"
         ordering = ['name']
 
-    def update(self, data):
+    def update(self, data, user=None):
         self.name=data['name']
         self.description = data['description']
         self.template = data['template']
         self.primaryColor = data['primaryColor']
         self.secondaryColor = data['secondaryColor']
-        self.user= data['user']
+        if user:
+            self.user=user
 
         self.save()
 
