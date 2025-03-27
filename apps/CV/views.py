@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from apps.CV.forms.CVForm import CvForm
 from apps.CV.models.CV import CV
 from apps.CV.models.Block import Block
+from django.template import loader
 
 
 def CV_id_view(request):
@@ -78,6 +79,8 @@ def CVManageExistingCV(request, name):
 
             messages.success(request, "CV Modifié !")
 
+            return redirect('cvTemplateRender', id=cv.id)
+
         except IntegrityError:
             messages.error(request, 'Erreur lors de la mise a jour du CV.')
         except Exception as e:
@@ -87,3 +90,18 @@ def CVManageExistingCV(request, name):
     form.setData(cv)
 
     return render(request, 'CVUpdate/CvUpdater.html', {'form': form, 'cv': cv, 'cvblocks': Cvblocks})
+
+def CVTemplateView(request, id):
+    cv = CV.object.getById(id)
+
+    form = CvForm()
+    form.setData(cv)
+
+    html = None
+    if cv:
+        template = "templatesFilesHTML/" + cv.template
+        templateLoad = loader.get_template(template)
+        # html = render(request, template, {'cv': cv})
+        html = templateLoad.render({'cv': cv}, request)
+        print(html)
+    return render(request, 'CvTemplaterender/view.html', {'cv': cv, 'html': html, 'form': form})

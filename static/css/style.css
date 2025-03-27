@@ -131,6 +131,11 @@
     width: fit-content;
 }
 
+iframe.CV-render {
+    min-height: 30cm;
+    min-width: 22cm;
+}
+
 /* ------------- decoupe template ---------------*/
 
 body {

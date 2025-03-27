@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Affichage du template{% endblock %}
+
+{% block body %}
+    <div class="px-4">
+        <div class="row pt-4">
+            <div class="col-md-6 bg-light">
+                <h1 class="text-secondary pt-3 px-3 d-flex justify-content-between align-items-center">
+                    Aperçu du template "{{ cv.name }}"
+                    <a class="btn btn-outline-primary mx-2" href="{% url 'cvUpdate' name=cv.name %}" title="modifier la configuration">
+                        <i class="fas fa-pen"></i>
+                    </a>
+                </h1>
+
+                <form action="{% url 'cvUpdate' cv.name %}" class="px-4" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <a class="btn btn-outline-dark" href="{% url 'cvTemplateRender' id=cv.id %}" title="Voir le CV">
+                            Cancel
+                        </a>
+                        <button type="submit" class="btn btn-primary mt-2">Valider le modification</button>
+                        <a class="btn btn-outline-primary mx-2" href="{% url 'cvUpdate' name=cv.name %}" title="modifier la configuration">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 text-end pt-3">
+
+                {% if html %}
+                    <iframe class="CV-render border mx-auto" srcdoc='{{ html }}'></iframe>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

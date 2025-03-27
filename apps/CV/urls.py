@@ -1,7 +1,8 @@
 from django.urls import path
-from apps.CV.views import CV_id_view, CVManageExistingCV
+from apps.CV.views import CV_id_view, CVManageExistingCV, CVTemplateView
 
 urlpatterns = [
     path('', CV_id_view, name='cvNew'),
-    path("<str:name>", CVManageExistingCV, name='cvUpdate')
+    path("<str:name>", CVManageExistingCV, name='cvUpdate'),
+    path("view/<int:id>", CVTemplateView, name='cvTemplateRender')
 ]

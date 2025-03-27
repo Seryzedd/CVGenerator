@@ -9,6 +9,9 @@ class CVManager():
     def getByName(self, name):
         return CV.objects.all().filter(name=name).select_related()[0]
 
+    def getById(self, id):
+        return CV.objects.all().filter(id=id).select_related()[0]
+
 class CV(models.Model):
     id = models.CharField(unique=True, primary_key=True, auto_created=True)
     name = models.CharField(max_length=50, unique=True)
