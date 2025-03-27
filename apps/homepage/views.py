@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from apps.CV.models.CV import CV
+from django.contrib import messages
 
-# Create your views here.
 
 def homepage_view(request):
-    CVs = None
+
     if request.user.is_authenticated:
         CVs = CV.object.getByUser(request.user)
+    else:
+        messages.info(request, 'Login first to use CV Generator.')
+        return redirect('login')
     return render(request, 'homepage/index.html', {'cvs': CVs})

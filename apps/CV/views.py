@@ -56,7 +56,6 @@ def CVManageExistingCV(request, name):
             for paramName, param in dict(post).items():
 
                 if paramName[:5] == 'block':
-                    i = 0
                     blocknumber = int(paramName[-1:]) - 1
 
                     if blocknumber not in blocklist.keys():
@@ -104,7 +103,6 @@ def CVTemplateView(request, id):
     if cv:
         template = "templatesFilesHTML/" + cv.template
         templateLoad = loader.get_template(template)
-        # html = render(request, template, {'cv': cv})
         html = templateLoad.render({'cv': cv}, request)
-        print(html)
+
     return render(request, 'CvTemplaterender/view.html', {'cv': cv, 'html': html, 'form': form})
