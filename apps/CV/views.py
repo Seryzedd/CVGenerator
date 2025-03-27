@@ -24,9 +24,9 @@ def CV_id_view(request):
                     'description': cleaned_data['description'],
                     'template': cleaned_data['template'],
                     'primaryColor': cleaned_data['primaryColor'],
-                    'secondaryColor': cleaned_data['secondaryColor'],
-                    'user': request.user
-                }
+                    'secondaryColor': cleaned_data['secondaryColor']
+                },
+                request.user
             )
 
             messages.success(request, "CV créé !")

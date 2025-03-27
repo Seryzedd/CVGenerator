@@ -45,7 +45,7 @@ class CV(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.id)
+            self.slug = slugify(self.name)
         
         super().save()
 

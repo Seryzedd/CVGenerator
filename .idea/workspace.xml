@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Add redirecting on unauthentified">
+    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Add logout header button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/models/CV.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/models/CV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743077537602</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Add logout header button">
+      <option name="closed" value="true" />
+      <created>1743078748310</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1743078748310</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,6 +306,7 @@
     <MESSAGE value="update id database auto generation" />
     <MESSAGE value="update CV data updating" />
     <MESSAGE value="Add redirecting on unauthentified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add redirecting on unauthentified" />
+    <MESSAGE value="Add logout header button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add logout header button" />
   </component>
 </project>
