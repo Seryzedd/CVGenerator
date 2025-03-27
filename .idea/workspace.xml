@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="update CV data updating">
+    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Add redirecting on unauthentified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/templates/CVNew/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/CVNew/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/homepage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/homepage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743077154307</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add redirecting on unauthentified">
+      <option name="closed" value="true" />
+      <created>1743077537602</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1743077537602</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +298,7 @@
     <MESSAGE value="Add template view" />
     <MESSAGE value="update id database auto generation" />
     <MESSAGE value="update CV data updating" />
-    <option name="LAST_COMMIT_MESSAGE" value="update CV data updating" />
+    <MESSAGE value="Add redirecting on unauthentified" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add redirecting on unauthentified" />
   </component>
 </project>
