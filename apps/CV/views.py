@@ -3,11 +3,13 @@ from django.db import IntegrityError
 from django.middleware import http
 from django.shortcuts import render, redirect
 from apps.CV.forms.CVForm import CvForm
+from apps.CV.models import Line
 from apps.CV.models.CV import CV
 from apps.CV.models.Block import Block
 from django.http import HttpResponse
 from xhtml2pdf import pisa
 from apps.CV.fileGenerator.generator import Generator
+from apps.CV.models.line import LineManager
 
 
 def CV_id_view(request):
@@ -51,15 +53,25 @@ def CVManageExistingCV(request, name):
     form.setData(cv)
 
     Cvblocks = Block.manager.getByCv(cv)
+
+    blocksIds = {block.id: block for block in Cvblocks}
+
+    lines = LineManager().getByBlocks(blocksIds)
+
     post = request.POST
     if post:
+
         try:
             cv = cv.update(post)
             blocklist = {}
+            lineParameters = {}
             for paramName, param in dict(post).items():
+                splittedParam = paramName.split('-')
+                last = None
+                if len(splittedParam) > 1:
+                    last = splittedParam[len(splittedParam) - 1]
 
-                if paramName[:5] == 'block':
-                    print(paramName[-1:])
+                if 'block' in splittedParam and 'line' not in splittedParam:
                     blocknumber = int(paramName[-1:]) - 1
 
                     if blocknumber not in blocklist.keys():
@@ -69,18 +81,48 @@ def CVManageExistingCV(request, name):
                     if 'block-placement-' in paramName:
                         blocklist[blocknumber]['placement'] = param[0]
                     if paramName[:8] == 'block-id':
-                        blocklist[blocknumber]['id'] = param[0]
+                        blocklist[blocknumber]['id'] = int(splittedParam[2])
 
-                    blocklist[blocknumber]['cv'] = cv
+                if 'line' in paramName:
+                    if last not in lineParameters.keys():
+                        lineParameters.update({last:{}})
+                    line = Line()
+                    if 'new' not in paramName:
+                        for lineentity in lines:
+                            if lineentity.id == int(last):
+                                line = lineentity
+                                break
+
+
+                    if 'title' in paramName:
+                        lineParameters.get(last).update({'title': post[paramName]})
+                    if 'startAt' in paramName:
+                        lineParameters.get(last).update({'startAt': post[paramName]})
+                    if 'endAt' in paramName:
+                        lineParameters.get(last).update({'endAt': post[paramName]})
+
+                    lineParameters.get(last).update({'block_id': splittedParam[1]})
+                    lineParameters.get(last).update({'entity': line})
+
+                    # lineParameters.update({last: lineparams})
 
             for blockParameters in range(len(blocklist)):
                 block = Block()
                 if "id" in blocklist[blockParameters].keys():
                     for cvblock in Cvblocks:
-                        if cvblock.id == blocklist[blockParameters]['cv']:
+                        if cvblock.id == blocklist[blockParameters]['id']:
                             block = cvblock
 
+                blocklist[blockParameters]['cv'] = cv
                 block.update(blocklist[blockParameters])
+
+            print(post)
+            for param in lineParameters.items():
+                entity = param[1]['entity']
+                print(param[1])
+                param[1].update({'block': blocksIds[int(param[1]['block_id'])]})
+                entity.update(param[1])
+
 
             messages.success(request, "CV Modifié !")
 
@@ -92,22 +134,31 @@ def CVManageExistingCV(request, name):
         #     messages.error(request, f"Une erreur est survenue : {e}")
 
     Cvblocks = Block.manager.getByCv(cv)
+    blocksIds = {block.id: block for block in Cvblocks}
+    lines = LineManager().getByBlocks(blocksIds)
+    lineskeys = [line.block.id for line in lines]
     form.setData(cv)
 
-    return render(request, 'CVUpdate/CvUpdater.html', {'form': form, 'cv': cv, 'cvblocks': Cvblocks})
+
+    return render(request, 'CVUpdate/CvUpdater.html', {'form': form, 'cv': cv, 'cvblocks': Cvblocks, 'lines': lines, 'linesKeys': lineskeys})
 
 
 def CVTemplateView(request, id):
     cv = CV.object.getById(id)
 
-    blocks = Block.manager.getByCv(cv)
-    form = CvForm()
-    form.setData(cv)
+
 
     html = None
     if cv:
+        blocks = Block.manager.getByCv(cv)
+        form = CvForm()
+        form.setData(cv)
+        blocksIds = {block.id: block for block in blocks}
+        lines = LineManager().getByBlocks(blocksIds)
+        lineskeys = [line.block.id for line in lines]
+
         generator = Generator()
-        templateLoad = generator.getTemplate(cv, blocks)
+        templateLoad = generator.getTemplate(cv, blocks, lines)
         # html = templateLoad.render({'cv': cv}, request)
 
     return render(request, 'CvTemplaterender/view.html', {'cv': cv, 'html': templateLoad, 'form': form})

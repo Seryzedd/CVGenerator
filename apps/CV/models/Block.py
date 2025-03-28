@@ -6,6 +6,7 @@ from django.utils.text import slugify
 class BlockManager():
     def all(self):
         return Block.objects.all()
+
     def getByCv(self, cv):
         return Block.objects.filter(cv=cv.id)
 
@@ -27,8 +28,6 @@ class Block(models.Model):
         self.name=data['name']
         self.placement = data['placement']
         self.cv = data['cv']
-        if 'id' in data.keys():
-            self.id = data['id']
 
         self.save()
 

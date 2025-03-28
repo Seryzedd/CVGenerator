@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Fix create new CV bug">
-      <change afterPath="$PROJECT_DIR$/apps/CV/fileGenerator/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/CV/fileGenerator/generator.py" afterDir="false" />
+    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Add file generator to download CV">
+      <change afterPath="$PROJECT_DIR$/apps/CV/models/line.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/fileGenerator/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/fileGenerator/generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/models/Block.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/models/Block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/templates/CvTemplaterender/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/CvTemplaterender/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/templates/cvUpdate/CvUpdater.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/cvUpdate/CvUpdater.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_left.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_left.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_right.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_right.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/homepage/templates/homepage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/homepage/templates/homepage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/homepage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/homepage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743080890219</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Add file generator to download CV">
+      <option name="closed" value="true" />
+      <created>1743150035027</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1743150035027</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -325,6 +331,7 @@
     <MESSAGE value="Add redirecting on unauthentified" />
     <MESSAGE value="Add logout header button" />
     <MESSAGE value="Fix create new CV bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix create new CV bug" />
+    <MESSAGE value="Add file generator to download CV" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add file generator to download CV" />
   </component>
 </project>

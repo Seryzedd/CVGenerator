@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <style>
             body {
                 display: flex;
@@ -18,20 +19,86 @@
         </style>
     </head>
     <body style="height: 29.7cm; padding:0; margin:0; width:21cm;" class="row">
-        <div class="col-8" id="left-side" style="background-color:rgb(125, 10, 57, 1);width: 60%; float: left; padding-top: 1rem; padding-right: 1rem; padding-left: 1rem;height: 100%; width:60%;">
+        <div class="col-8" id="left-side" style="background-color:{{ cv.primaryColor }};width: 60%; float: left; padding-top: 1rem; padding-right: 1rem; padding-left: 1rem;height: 100%; width:60%;">
             <h1 class="">{{ cv.name }}</h1>
             <p>{{ cv.description }}</p>
 
             {% for block in blocks %}
-                {% if block.placement == 'left-side' %}
-                    <h3><strong>{{ block.name }}</strong></h3>
-                {% endif %}
-            {% endfor %}
+                    {% if block.placement == 'left-side' %}
+                        <h3>{{ block.name }}</h3>
+
+                        {% if lines|length > 0 %}
+                            {% for line in lines %}
+                                {% if line.block.id == block.id %}
+                                    <div class="row">
+                                        {% if line.startAt is not None and line.endAt is not None %}
+
+                                            <div class="col-4">
+                                                {% if line.startAt != None %}
+                                                    <p class="mb-0">Du: {{line.startAt|date:'d-m-Y'}}</p>
+                                                {% endif %}
+
+                                                {% if line.endAt != None %}
+                                                    <p class="mb-0">Au : {{line.endAt|date:'d-m-Y'}}</p>
+                                                {% endif %}
+                                            </div>
+                                            {% if line.title != ""  %}
+
+                                                <div class="col-8 ps-2">
+                                                    <p><strong>{{line.title}}</strong></p>
+                                                </div>
+                                            {% endif %}
+                                        {% else %}
+                                            <div class="col-12 ps-2">
+                                                <p><strong>{{line.title}}</strong></p>
+                                            </div>
+                                        {% endif %}
+
+
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
         </div>
         <div class="col-4" id="right-side" style="background-color:{{ cv.secondaryColor }}; width: 32%; float: left; padding-top: 1rem; padding-right: 1rem; padding-left: 1rem;height: 100%;width:31%;">
             {% for block in blocks %}
                 {% if block.placement == 'right-side' %}
                     <h3><strong>{{ block.name }}</strong></h3>
+
+                    {% if lines|length > 0 %}
+                            {% for line in lines %}
+                                {% if line.block.id == block.id %}
+                                    <div class="row">
+                                        {% if line.startAt is not None and line.endAt is not None %}
+
+                                            <div class="col-4">
+                                                {% if line.startAt != None %}
+                                                    <p class="mb-0">Du: {{line.startAt|date:'d-m-Y'}}</p>
+                                                {% endif %}
+
+                                                {% if line.endAt != None %}
+                                                    <p class="mb-0">Au : {{line.endAt|date:'d-m-Y'}}</p>
+                                                {% endif %}
+                                            </div>
+                                            {% if line.title != ""  %}
+
+                                                <div class="col-8 ps-2">
+                                                    <p><strong>{{line.title}}</strong></p>
+                                                </div>
+                                            {% endif %}
+                                        {% else %}
+                                            <div class="col-12 ps-2">
+                                                <p><strong>{{line.title}}</strong></p>
+                                            </div>
+                                        {% endif %}
+
+
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                 {% endif %}
             {% endfor %}
         </div>

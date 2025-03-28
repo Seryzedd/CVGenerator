@@ -10,6 +10,39 @@
                 {% for block in blocks %}
                     {% if block.placement == 'left-side' %}
                         <h3>{{ block.name }}</h3>
+
+                        {% if lines|length > 0 %}
+                            {% for line in lines %}
+                                {% if line.block.id == block.id %}
+                                    <div class="row">
+                                        {% if line.startAt is not None and line.endAt is not None %}
+
+                                            <div class="col-4">
+                                                {% if line.startAt != None %}
+                                                    <p class="mb-0">Du: {{line.startAt|date:'d-m-Y'}}</p>
+                                                {% endif %}
+
+                                                {% if line.endAt != None %}
+                                                    <p class="mb-0">Au : {{line.endAt|date:'d-m-Y'}}</p>
+                                                {% endif %}
+                                            </div>
+                                            {% if line.title != ""  %}
+
+                                                <div class="col-8 ps-2">
+                                                    <p><strong>{{line.title}}</strong></p>
+                                                </div>
+                                            {% endif %}
+                                        {% else %}
+                                            <div class="col-12 ps-2">
+                                                <p><strong>{{line.title}}</strong></p>
+                                            </div>
+                                        {% endif %}
+
+
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
             </div>
@@ -20,6 +53,39 @@
                 {% for block in blocks %}
                     {% if block.placement == 'right-side' %}
                         <h3>{{ block.name }}</h3>
+
+                        {% if lines|length > 0 %}
+                            {% for line in lines %}
+                                {% if line.block.id == block.id %}
+                                    <div class="row">
+                                        {% if line.startAt is not None and line.endAt is not None %}
+
+                                            <div class="col-4">
+                                                {% if line.startAt != None %}
+                                                    <p class="mb-0">Du: {{line.startAt|date:'d-m-Y'}}</p>
+                                                {% endif %}
+
+                                                {% if line.endAt != None %}
+                                                    <p class="mb-0">Au : {{line.endAt|date:'d-m-Y'}}</p>
+                                                {% endif %}
+                                            </div>
+                                            {% if line.title != ""  %}
+
+                                                <div class="col-8 ps-2">
+                                                    <p><strong>{{line.title}}</strong></p>
+                                                </div>
+                                            {% endif %}
+                                        {% else %}
+                                            <div class="col-12 ps-2">
+                                                <p><strong>{{line.title}}</strong></p>
+                                            </div>
+                                        {% endif %}
+
+
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
             </div>

@@ -4,9 +4,14 @@
 
 {% block body %}
 <div class="px-3">
-    <div class="text-center bg-light p-4">
+    <div class="text-center row bg-light p-4">
+        <div class="col-12 text-end">
+            <a class="btn btn-outline-dark" href="{% url 'cvTemplateRender' id=cv.id %}" title="Voir le CV">
+                <i class="fa-solid fa-eye"></i>
+            </a>
+        </div>
         <h1 class="col-12 text-secondary">Modifier le CV "{{ cv.name }}"</h1>
-        <form method="post" class="">
+        <form method="post" class="col-12">
             <div class="row">
                 <div class="col-md-6">
                     {% csrf_token %}
@@ -61,6 +66,24 @@
                                 </select>
 
                                 <div id="linesContainer-{{ block.id }}" class="border px-3 py-2 mt-2">
+                                    {% if block.id in linesKeys %}
+                                        <div class="p-3 mt-2 border bg-white">
+                                            <h4 class="text-secondary text-center">Lines</h4>
+                                            {% for line in lines %}
+                                                {% if line.block.id == block.id %}
+                                                    <label for="block-{{ block.id }}-line-title-{{ line.id }}">Title</label>
+                                                    <input type="text" value="{{ line.title }}" class="form-control" id="block-{{ block.id }}-line-title-{{ line.id }}" name="block-{{ block.id }}-line-title-{{ line.id }}">
+
+                                                    <label for="block-{{ block.id }}-line-startAt-{{ line.id }}">Commence le</label>
+                                                    <input type="date" value="{{ line.startAt|date:'Y-m-d' }}" class="form-control" id="block-{{ block.id }}-line-startAt-{{ line.id }}" name="block-{{ block.id }}-line-startAt-{{ line.id }}">
+
+                                                    <label for="block-{{ block.id }}-line-endAt-{{ line.id }}">Termine le</label>
+                                                    <input type="date" value="{{ line.endAt|date:'Y-m-d' }}" class="form-control" id="block-{{ block.id }}-line-endAt-{{ line.id }}" name="block-{{ block.id }}-line-endAt-{{ line.id }}">
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+
                                     <button class="btn btn-outline-dark mt-2" id="line-block-3" type="button">Créer une nouvelle ligne</button>
                                 </div>
                             </div>
@@ -73,7 +96,8 @@
                     </button>
                 </div>
 
-                <div class="col-12">
+
+                <div class="col-12 mt-2">
                     <button type="submit" class="btn btn-primary">Valider la modification</button>
                 </div>
             </div>

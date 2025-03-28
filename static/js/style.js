@@ -44,9 +44,10 @@ function createButton(text, className, id, parent) {
 }
 
 function addNewLineEventListener(button) {
-    console.log(button)
+    let blockinput = $(button).closest('.block-container').find('input[type="hidden"][name^="block"]')
+
     button.addEventListener("click", (e) => {
-      var line = newLine();
+      var line = newLine(blockinput);
       $(event.target).before(line)
     });
 }
@@ -58,8 +59,7 @@ $(document).ready(function() {
 })
 
 var i = 0;
-function newLine() {
-
+function newLine(blockinput) {
     var lineBlock = document.createElement("div");
     lineBlock.setAttribute('class', 'lineContainer')
     i++
@@ -68,9 +68,9 @@ function newLine() {
     lineTitle.textContent='New Line'
     lineBlock.appendChild(lineTitle)
 
-    createInput('form-control', 'line-' + i, 'title-line-' + i, lineBlock, 'Title')
-    createInputDate('StartAt-line-' + i, 'start-line-' + i, lineBlock, 'Start Date');
-    createInputDate('EndAt-line-' + i, 'end-line-' + i, lineBlock, 'End Date');
+    createInput('form-control', 'block-' + blockinput.val() + '-line-' + i, 'block-' + blockinput.val() + '-title-line-new', lineBlock, 'Title')
+    createInputDate('block-' + blockinput.val() + 'StartAt-new-line-' + i, 'block-' + blockinput.val() +'-start-line-new', lineBlock, 'Start Date');
+    createInputDate('block-' + blockinput.val() + 'EndAt-new-line-' + i, 'block-' + blockinput.val() +'-end-line-new', lineBlock, 'End Date');
 
     return lineBlock
 

@@ -4,8 +4,9 @@ from django.template.loader import render_to_string, get_template
 from django.http import FileResponse
 import asyncio
 from playwright.async_api import async_playwright, expect
-
+import pdfkit
 from apps.CV.models import Block
+from apps.CV.models.line import LineManager
 
 
 async def html_to_pdf(html_content, output_path, css):
@@ -40,8 +41,12 @@ class Generator:
         filename = 'CV_' + cv.name + '.pdf'
 
         Cvblocks = Block.manager.getByCv(cv)
+        blocksIds = {block.id: block for block in Cvblocks}
+
+        Lines = LineManager().getByBlocks(blocksIds)
+
         # # Open file to write
-        content = self.getTemplate(cv, Cvblocks)
+        content = self.getTemplate(cv, Cvblocks, Lines)
 
         if not os.path.isdir("./files"):
             os.mkdir("./files")
