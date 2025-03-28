@@ -4,7 +4,6 @@ from django.contrib import messages
 
 
 def homepage_view(request):
-
     if request.user.is_authenticated:
         CVs = CV.object.getByUser(request.user)
     else:

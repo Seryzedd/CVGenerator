@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Add logout header button">
+    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Fix create new CV bug">
+      <change afterPath="$PROJECT_DIR$/apps/CV/fileGenerator/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/CV/fileGenerator/generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/models/CV.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/models/CV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/models/Block.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/models/Block.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/templates/CvTemplaterender/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/CvTemplaterender/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_left.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_left.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_right.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_right.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/CV/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/homepage/templates/homepage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/homepage/templates/homepage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/homepage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/homepage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -42,20 +51,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;devAurel&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/CVGenerator/apps/login/utils&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "devAurel",
+    "last_opened_file_path": "C:/wamp64/www/CVGenerator"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\CVGenerator" />
       <recent name="C:\wamp64\www\CVGenerator\apps\login\utils" />
       <recent name="C:\wamp64\www\CVGenerator\apps\auth" />
-      <recent name="C:\wamp64\www\CVGenerator" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\CVGenerator\apps\CV\templates\CVNew" />
@@ -269,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743078748310</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fix create new CV bug">
+      <option name="closed" value="true" />
+      <created>1743080890219</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1743080890219</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -307,6 +324,7 @@
     <MESSAGE value="update CV data updating" />
     <MESSAGE value="Add redirecting on unauthentified" />
     <MESSAGE value="Add logout header button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add logout header button" />
+    <MESSAGE value="Fix create new CV bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix create new CV bug" />
   </component>
 </project>

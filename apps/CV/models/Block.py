@@ -11,7 +11,6 @@ class BlockManager():
 
 
 class Block(models.Model):
-    id = models.CharField(unique=True, primary_key=True, auto_created=True)
     name = models.CharField(max_length=50, unique=False)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
     placement = models.CharField(max_length=50, unique=False, default='')

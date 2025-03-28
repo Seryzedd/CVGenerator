@@ -6,10 +6,22 @@
 </head>
     <body style="height: 29.7cm;">
         <div class="row" style="height: 100%;">
-            <div class="col-4" style="background-color:{{ cv.secondaryColor }};"></div>
-            <div class="col-8 px-4 pt-4" style="background-color:{{ cv.primaryColor }};">
+            <div class="col-4" style="background-color:{{ cv.secondaryColor }}; padding: 1rem; margin: 0;">
+                {% for block in blocks %}
+                    {% if block.placement == 'left-side' %}
+                        <h3>{{ block.name }}</h3>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="col-8 px-4 pt-4" style="background-color:{{ cv.primaryColor }}; margin: 0;">
                 <h1 class="">{{ cv.name }}</h1>
                 <p>{{ cv.description }}</p>
+
+                {% for block in blocks %}
+                    {% if block.placement == 'right-side' %}
+                        <h3>{{ block.name }}</h3>
+                    {% endif %}
+                {% endfor %}
             </div>
 
         </div>

@@ -1,10 +1,13 @@
 from django.contrib import messages
 from django.db import IntegrityError
+from django.middleware import http
 from django.shortcuts import render, redirect
 from apps.CV.forms.CVForm import CvForm
 from apps.CV.models.CV import CV
 from apps.CV.models.Block import Block
-from django.template import loader
+from django.http import HttpResponse
+from xhtml2pdf import pisa
+from apps.CV.fileGenerator.generator import Generator
 
 
 def CV_id_view(request):
@@ -56,6 +59,7 @@ def CVManageExistingCV(request, name):
             for paramName, param in dict(post).items():
 
                 if paramName[:5] == 'block':
+                    print(paramName[-1:])
                     blocknumber = int(paramName[-1:]) - 1
 
                     if blocknumber not in blocklist.keys():
@@ -84,8 +88,8 @@ def CVManageExistingCV(request, name):
 
         except IntegrityError:
             messages.error(request, 'Erreur lors de la mise a jour du CV.')
-        except Exception as e:
-            messages.error(request, f"Une erreur est survenue : {e}")
+        # except Exception as e:
+        #     messages.error(request, f"Une erreur est survenue : {e}")
 
     Cvblocks = Block.manager.getByCv(cv)
     form.setData(cv)
@@ -96,13 +100,26 @@ def CVManageExistingCV(request, name):
 def CVTemplateView(request, id):
     cv = CV.object.getById(id)
 
+    blocks = Block.manager.getByCv(cv)
     form = CvForm()
     form.setData(cv)
 
     html = None
     if cv:
-        template = "templatesFilesHTML/" + cv.template
-        templateLoad = loader.get_template(template)
-        html = templateLoad.render({'cv': cv}, request)
+        generator = Generator()
+        templateLoad = generator.getTemplate(cv, blocks)
+        # html = templateLoad.render({'cv': cv}, request)
 
-    return render(request, 'CvTemplaterender/view.html', {'cv': cv, 'html': html, 'form': form})
+    return render(request, 'CvTemplaterender/view.html', {'cv': cv, 'html': templateLoad, 'form': form})
+
+def generatePDF(request, id):
+    cv = CV.object.getById(id)
+
+    if cv:
+        generator = Generator()
+        # Open file to write
+        response = generator.generatedownloaderResponse(cv)
+
+        return response
+
+

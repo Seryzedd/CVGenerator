@@ -23,9 +23,9 @@
                     </div>
 
                     <div class="col-md-4 d-flex justify-content-end p-2">
-                        <button class="btn btn-outline-dark mx-2" title="Générer le fichier">
+                        <a class="btn btn-outline-dark mx-2" href="{% url 'generateCVPDF' id=cv.id %}" title="Générer le fichier">
                             <i class="fas fa-download"></i>
-                        </button>
+                        </a>
 
                         <a class="btn btn-outline-dark" href="{% url 'cvTemplateRender' id=cv.id %}" title="Voir le CV">
                             <i class="fa-solid fa-eye"></i>
