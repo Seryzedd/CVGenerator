@@ -28,6 +28,11 @@
                             </p>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{% url 'adress' %}" title="Mon adresse postale">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <form action="{% url 'logout' %}" method="post">
                                 {% csrf_token %}
                                 <button type="submit" class="nav-link"><i class="fas fa-sign-out-alt"></i></button>

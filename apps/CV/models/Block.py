@@ -2,6 +2,8 @@ from django.db import models
 from apps.CV.models.CV import CV
 from django.utils.text import slugify
 
+from apps.login.models import Adress
+
 
 class BlockManager():
     def all(self):

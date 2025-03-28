@@ -7,6 +7,15 @@
     <body style="height: 29.7cm;">
         <div class="row" style="height: 100%;">
             <div class="col-4" style="background-color:{{ cv.secondaryColor }}; padding: 1rem; margin: 0;">
+                {% if user %}
+                    <h4>{{ user.firstname }} {{ user.lastname }}</h4>
+                    <h5>{{ user.email }}</h5>
+                    {% if user.adress %}
+                        <p class="mb-0">{{ user.adress.street }}</p>
+                        <p class="mb-0">{{ user.adress.zipCode }} {{ user.adress.city }}</p>
+                        <p class="mb-0">{{ user.adress.country }}</p>
+                    {% endif %}
+                {% endif %}
                 {% for block in blocks %}
                     {% if block.placement == 'left-side' %}
                         <h3>{{ block.name }}</h3>

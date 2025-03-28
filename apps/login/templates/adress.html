@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Adress{% endblock %}
+
+{% block body %}
+    <div class="w-100 px-3">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 py-5 px-5 bg-light">
+                <h1 class="text-center text-secondary mt-3">CV Generator</h1>
+                <form method="post" class="form-group text-center">
+                    <h3 class="">Enregistrer mon adresse postale</h3>
+                    <p class="text-muted">Vos coordonnées seront affichés dans vos CV.</p>
+                    {% csrf_token %}
+                    {{ form }}
+
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

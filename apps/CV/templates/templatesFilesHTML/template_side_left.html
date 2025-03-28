@@ -63,6 +63,16 @@
                 {% endfor %}
         </div>
         <div class="col-4" id="right-side" style="background-color:{{ cv.secondaryColor }}; width: 32%; float: left; padding-top: 1rem; padding-right: 1rem; padding-left: 1rem;height: 100%;width:31%;">
+            {% if user %}
+                <h4>{{ user.firstname }} {{ user.lastname }}</h4>
+                <h5>{{ user.email }}</h5>
+                {% if user.adress %}
+                    <p class="mb-0">{{ user.adress.street }}</p>
+                    <p class="mb-0">{{ user.adress.zipCode }} {{ user.adress.city }}</p>
+                    <p class="mb-0">{{ user.adress.country }}</p>
+                {% endif %}
+            {% endif %}
+
             {% for block in blocks %}
                 {% if block.placement == 'right-side' %}
                     <h3><strong>{{ block.name }}</strong></h3>

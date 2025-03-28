@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Add file generator to download CV">
-      <change afterPath="$PROJECT_DIR$/apps/CV/models/line.py" afterDir="false" />
+    <list default="true" id="434e4d9b-1479-4d0d-a843-9ade60649a54" name="Changes" comment="Updatine cv lines">
+      <change afterPath="$PROJECT_DIR$/apps/login/forms/adress_form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/login/models/adress.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/login/templates/adress.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/fileGenerator/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/fileGenerator/generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/models/Block.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/models/Block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/CV/templates/cvUpdate/CvUpdater.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/cvUpdate/CvUpdater.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_left.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_left.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_right.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/templates/templatesFilesHTML/template_side_right.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/CV/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/CV/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -49,15 +53,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "devAurel",
-    "last_opened_file_path": "C:/wamp64/www/CVGenerator"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;devAurel&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/CVGenerator&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\CVGenerator" />
@@ -292,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743150035027</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Updatine cv lines">
+      <option name="closed" value="true" />
+      <created>1743171947767</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1743171947767</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -307,7 +319,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create base project" />
     <MESSAGE value="add django files" />
     <MESSAGE value="Fix url bugs" />
     <MESSAGE value="Fix render templates" />
@@ -332,6 +343,7 @@
     <MESSAGE value="Add logout header button" />
     <MESSAGE value="Fix create new CV bug" />
     <MESSAGE value="Add file generator to download CV" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add file generator to download CV" />
+    <MESSAGE value="Updatine cv lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updatine cv lines" />
   </component>
 </project>

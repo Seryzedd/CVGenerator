@@ -2,8 +2,10 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.db import IntegrityError
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+
+from apps.login.forms.adress_form import AdressForm
 from apps.login.forms.login_form import LoginForm
-from apps.login.models import User
+from apps.login.models import User, Adress
 from django.contrib import messages
 from apps.login.forms.register_form import RegisterForm
 
@@ -78,3 +80,38 @@ class CustomLogoutView(LogoutView):
         messages.success(request, 'Vous avez été déconnecté !')
 
         return super().dispatch(request, *args, **kwargs)
+
+def addressView(request):
+    form = AdressForm(request.POST or None)
+
+    if request.user.adress:
+        form.setData(request.user)
+
+    if form.is_valid():
+        # Traitement si le formulaire est valide
+        cleaned_data = form.cleaned_data
+        try:
+            adress = Adress()
+            adress.update(
+                cleaned_data
+            )
+
+            request.user.adress=adress
+            request.user.save()
+            # User.objects.create_user(
+            #     username=cleaned_data['username'],
+            #     email=cleaned_data['email'],
+            #     firstname=cleaned_data['firstname'],
+            #     lastname=cleaned_data['lastname'],
+            #     password=cleaned_data['password']
+            # )
+
+            messages.success(request, "Address enregistré !")
+
+            return redirect('home')
+        except Exception as e:
+            print(e)
+            messages.error(request, f"Une erreur est survenue : {e}")
+    return render(request, 'adress.html', {
+        'form': form
+    })

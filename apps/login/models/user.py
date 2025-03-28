@@ -1,6 +1,7 @@
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
+from apps.login.models.adress import Adress
 
 
 class UserManager(BaseUserManager):
@@ -25,6 +26,7 @@ class UserManager(BaseUserManager):
         user.is_superuser = True
         user.save(using=self._db)
 
+
         return user
 
 
@@ -35,6 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    adress = models.OneToOneField(Adress, on_delete=models.CASCADE, null=True)
 
     objects = UserManager()
 

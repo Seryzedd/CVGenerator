@@ -58,6 +58,7 @@ class Generator:
 
         return response
 
-    def getTemplate(self, cv, blocks=None, lines=None, details=None):
+    def getTemplate(self, cv, blocks=None, lines=None, details=None, user=None):
         template = "templatesFilesHTML/" + cv.template
-        return render_to_string(template, {"cv": cv, 'blocks': blocks, 'lines':lines, 'details': details})
+
+        return render_to_string(template, {"cv": cv, 'blocks': blocks, 'lines':lines, 'details': details, 'user': user})

@@ -146,8 +146,6 @@ def CVManageExistingCV(request, name):
 def CVTemplateView(request, id):
     cv = CV.object.getById(id)
 
-
-
     html = None
     if cv:
         blocks = Block.manager.getByCv(cv)
@@ -158,7 +156,7 @@ def CVTemplateView(request, id):
         lineskeys = [line.block.id for line in lines]
 
         generator = Generator()
-        templateLoad = generator.getTemplate(cv, blocks, lines)
+        templateLoad = generator.getTemplate(cv, blocks, lines, None, request.user)
         # html = templateLoad.render({'cv': cv}, request)
 
     return render(request, 'CvTemplaterender/view.html', {'cv': cv, 'html': templateLoad, 'form': form})
